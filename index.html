@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>!LERT — Forensic Intelligence Layer & Investor Pitch Console</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#070a0f',
+            surface: '#0e131d',
+            panel: '#141b29',
+            borderline: '#222d42',
+            accent: '#38bdf8',
+            emeraldSignal: '#10b981',
+            amberSignal: '#f59e0b',
+            roseSignal: '#f43f5e'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #070a0f; color: #e2e8f0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .glass-card { background: rgba(20, 27, 41, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(56, 189, 248, 0.16); }
+    pre { white-space: pre-wrap; word-break: break-word; }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-sky-500/30 selection:text-sky-200">
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-40 border-b border-borderline bg-obsidian/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+      <div class="flex items-center gap-3">
+        <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-500/15 border border-sky-400/40 font-mono text-sm font-bold text-sky-400">
+          !L
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold tracking-tight text-white text-base">!LERT</span>
+            <span class="rounded bg-sky-500/10 px-1.5 py-0.5 font-mono text-[11px] text-sky-300 border border-sky-500/25">alert-intel</span>
+          </div>
+          <p class="text-xs text-slate-400">Cross-Modal Forensic Correlation & Fraud Verdict Engine</p>
+        </div>
+      </div>
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-medium">
+        <a href="#pitch" class="rounded-md px-3 py-1.5 text-slate-300 hover:bg-panel hover:text-white">Pitch</a>
+        <a href="#triage" class="rounded-md px-3 py-1.5 text-slate-300 hover:bg-panel hover:text-white">Live Triage</a>
+        <a href="#billing" class="rounded-md px-3 py-1.5 text-slate-300 hover:bg-panel hover:text-white">Stripe Plans</a>
+        <a href="#architecture" class="rounded-md px-3 py-1.5 text-slate-300 hover:bg-panel hover:text-white">Architecture</a>
+        <button onclick="openModal('stackModal')" class="rounded-md bg-sky-500 px-3 py-1.5 font-semibold text-slate-950 hover:bg-sky-400 transition">
+          GitHub & Render Stack
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl space-y-14 px-4 py-8">
+    <!-- Section 01: Pitch Opening & Core Thesis -->
+    <section id="pitch" class="grid gap-6 lg:grid-cols-12 items-start">
+      <div class="lg:col-span-7 space-y-4">
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300">
+          <span>Evidence-Gated Forensic Intelligence</span>
+          <span class="text-emerald-500">•</span>
+          <span>Four-Tier Verdict Engine</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          Fraud is a pattern problem. <span class="text-sky-400">!LERT</span> remembers every pattern.
+        </h1>
+        <p class="text-slate-300 text-base leading-relaxed">
+          Conventional scanners ask whether a single link or hash sits on a static blacklist. Modern fraud—slow-burn romance and pig-butchering grooming, stolen identities, 72-hour lookalike domains, forged receipts, and deepfakes—operates across channels before a static indicator ever appears. !LERT correlates behavioral timelines, identity claims, registries, and media forensics into one explainable verdict.
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="#triage" class="rounded-lg bg-sky-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-sky-400">
+            Run Live Forensic Demo
+          </a>
+          <a href="#billing" class="rounded-lg border border-borderline bg-panel px-4 py-2.5 text-sm font-semibold text-white hover:border-sky-400/50">
+            Test Stripe Checkout
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 glass-card rounded-2xl p-5 space-y-4">
+        <div class="flex items-center justify-between border-b border-borderline pb-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-sky-400">Four-Tier Evidence Gate</span>
+          <span class="text-xs text-slate-400">Zero Single-Signal Accusations</span>
+        </div>
+        <div class="space-y-2.5 text-xs">
+          <div class="rounded-lg border border-emerald-500/25 bg-emerald-500/5 p-3">
+            <div class="font-semibold text-emerald-300">Tier 1: VERIFIED_CONSISTENT</div>
+            <p class="text-slate-300 mt-0.5">Authoritative registry/identity match, zero tampering, zero behavioral anomalies → "No Inconsistencies Found".</p>
+          </div>
+          <div class="rounded-lg border border-slate-600/40 bg-slate-800/40 p-3">
+            <div class="font-semibold text-slate-200">Tier 2: UNVERIFIED_SPARSE</div>
+            <p class="text-slate-300 mt-0.5">Insufficient public footprint with zero hard contradictions → "Unverified — Proceed With Caution".</p>
+          </div>
+          <div class="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3">
+            <div class="font-semibold text-amber-300">Tier 3: INCONSISTENCY_FLAGGED</div>
+            <p class="text-slate-300 mt-0.5">1+ objective anomalies below fraud threshold → reports exact discrepancies without calling someone a scammer.</p>
+          </div>
+          <div class="rounded-lg border border-rose-500/30 bg-rose-500/5 p-3">
+            <div class="font-semibold text-rose-300">Tier 4: HIGH_CONFIDENCE_FRAUD</div>
+            <p class="text-slate-300 mt-0.5">Requires ≥ 2 independent forensic proofs (e.g., stolen/AI photo + playbook pivot) or ≥ 3 corroborated hits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 02: Live Forensic Triage Console + Presidio RAM Scrubber -->
+    <section id="triage" class="glass-card rounded-2xl p-6 space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-borderline pb-4">
+        <div>
+          <h2 class="text-xl font-bold text-white">Live !LERT Triage & Presidio RAM Scrubber</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Test preset fraud/verification cases or paste custom input across Modes A, B, and C.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="setMode('Mode A: Quick Spot-Check')" id="btn-mode-a" class="mode-btn rounded-md bg-sky-500/20 border border-sky-400/50 px-3 py-1.5 text-xs font-medium text-sky-300">Mode A: Spot-Check</button>
+          <button onclick="setMode('Mode B: Thread Snapshot')" id="btn-mode-b" class="mode-btn rounded-md bg-panel border border-borderline px-3 py-1.5 text-xs font-medium text-slate-300">Mode B: Thread Snapshot</button>
+          <button onclick="setMode('Mode C: Active Contact Watch')" id="btn-mode-c" class="mode-btn rounded-md bg-panel border border-borderline px-3 py-1.5 text-xs font-medium text-slate-300">Mode C: Contact Watch</button>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="text-xs text-slate-400 self-center mr-1">Presets:</span>
+        <button onclick="loadPreset('naomi')" class="rounded-full border border-borderline bg-panel px-3 py-1 text-xs text-slate-200 hover:border-sky-400">Naomi Persona & Photo Mismatch</button>
+        <button onclick="loadPreset('recruiter')" class="rounded-full border border-borderline bg-panel px-3 py-1 text-xs text-slate-200 hover:border-sky-400">Fake Recruiter & 72h Domain</button>
+        <button onclick="loadPreset('receipt')" class="rounded-full border border-borderline bg-panel px-3 py-1 text-xs text-slate-200 hover:border-sky-400">Altered Transfer Receipt</button>
+        <button onclick="loadPreset('verified')" class="rounded-full border border-borderline bg-panel px-3 py-1 text-xs text-slate-200 hover:border-sky-400">Verified Nigerian Enterprise (CAC)</button>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-5 space-y-3">
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400">Artifact / Message / Claim Input</label>
+          <textarea id="triageInput" rows="6" class="w-full rounded-xl border border-borderline bg-obsidian p-3 text-sm text-slate-100 focus:border-sky-400 focus:outline-none"></textarea>
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span id="activeModeLabel">Active: Mode A: Quick Spot-Check</span>
+            <span>Ephemeral RAM Processing</span>
+          </div>
+          <button onclick="runForensicScan()" class="w-full rounded-xl bg-sky-500 py-2.5 text-sm font-semibold text-slate-950 hover:bg-sky-400 transition">
+            Run Forensic Correlation
+          </button>
+        </div>
+
+        <div id="triageOutput" class="lg:col-span-7 rounded-xl border border-borderline bg-obsidian p-5 space-y-4">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 03: Stripe Billing & Subscription Simulator -->
+    <section id="billing" class="glass-card rounded-2xl p-6 space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-borderline pb-4">
+        <div>
+          <h2 class="text-xl font-bold text-white">Stripe Billing & API Key Provisioning</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Interactive checkout flow for investor & customer demos (simulated test card + backend webhook blueprint).</p>
+        </div>
+        <div class="inline-flex rounded-lg border border-borderline bg-obsidian p-1 text-xs">
+          <button onclick="setCurrency('USD')" id="curr-usd" class="rounded-md bg-sky-500 px-3 py-1 font-semibold text-slate-950">USD ($)</button>
+          <button onclick="setCurrency('NGN')" id="curr-ngn" class="rounded-md px-3 py-1 font-semibold text-slate-300">NGN (₦)</button>
+        </div>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-xl border border-borderline bg-obsidian p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="text-xs font-semibold uppercase text-slate-400">Starter</div>
+            <div class="text-2xl font-bold text-white" id="price-starter">$0 <span class="text-xs font-normal text-slate-400">/ mo</span></div>
+            <p class="text-xs text-slate-400">Mode A Quick Spot-Checks, Presidio PII scrubbing, and Four-Tier verdict transparency.</p>
+          </div>
+          <button onclick="openStripeCheckout('Starter Free', 0)" class="w-full rounded-lg border border-borderline bg-panel py-2 text-xs font-semibold text-white hover:border-sky-400">
+            Activate Free Tier
+          </button>
+        </div>
+
+        <div class="rounded-xl border border-sky-500/40 bg-obsidian p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase text-sky-400">Guardian Pro</span>
+              <span class="rounded bg-sky-500/15 px-2 py-0.5 text-[10px] text-sky-300">Most Popular</span>
+            </div>
+            <div class="text-2xl font-bold text-white" id="price-pro">$29 <span class="text-xs font-normal text-slate-400">/ mo</span></div>
+            <p class="text-xs text-slate-400">Mode B Thread Snapshots, Mode C Active Contact Watch, Safe-Verify Cards, and media forensics.</p>
+          </div>
+          <button onclick="openStripeCheckout('Guardian Pro', 29)" class="w-full rounded-lg bg-sky-500 py-2 text-xs font-semibold text-slate-950 hover:bg-sky-400">
+            Subscribe with Stripe
+          </button>
+        </div>
+
+        <div class="rounded-xl border border-borderline bg-obsidian p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="text-xs font-semibold uppercase text-emerald-400">Enterprise Verdict API</div>
+            <div class="text-2xl font-bold text-white" id="price-ent">$249 <span class="text-xs font-normal text-slate-400">/ mo</span></div>
+            <p class="text-xs text-slate-400">High-volume correlation API, CAC/KYB & domain-age checks, webhook alerts, and dedicated SLA.</p>
+          </div>
+          <button onclick="openStripeCheckout('Enterprise Verdict API', 249)" class="w-full rounded-lg border border-emerald-500/40 bg-emerald-500/10 py-2 text-xs font-semibold text-emerald-300 hover:bg-emerald-500/20">
+            Start Enterprise Checkout
+          </button>
+        </div>
+      </div>
+
+      <div id="provisionedKeyBox" class="hidden rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-xs space-y-1">
+        <div class="font-semibold text-emerald-300">Stripe Webhook Event: checkout.session.completed (Simulated Test Mode)</div>
+        <div class="text-slate-200">Active Plan: <span id="provPlan" class="font-semibold"></span> • Provisioned API Key: <code id="provKey" class="rounded bg-obsidian px-2 py-0.5 text-emerald-300"></code></div>
+      </div>
+    </section>
+
+    <!-- Section 04: Architecture, Longevity & Investor Q&A -->
+    <section id="architecture" class="grid gap-6 lg:grid-cols-2">
+      <div class="glass-card rounded-2xl p-6 space-y-4">
+        <h2 class="text-lg font-bold text-white">Zero-Local-Compute Cloud Architecture</h2>
+        <ul class="space-y-2.5 text-xs text-slate-300">
+          <li><strong class="text-sky-300">Fast Path (&lt;150ms):</strong> Upstash Redis deduplication & rate-limiting + Neon Serverless PostgreSQL 16 with pgvector.</li>
+          <li><strong class="text-sky-300">Async Deep Path:</strong> Temporal.io workers, Modal serverless GPU (scale-to-zero media/ELA/deepfake checks), and LiteLLM + PydanticAI.</li>
+          <li><strong class="text-sky-300">5-Horizon Roadmap:</strong> Launch (Nigeria CAC & domain age) → Depth (Thread Snapshot, Contact Watch & media lab) → Expansion (UK/US registries) → Platform API → Trusted Evidence Standard.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 space-y-3">
+        <h2 class="text-lg font-bold text-white">Investor Pitch Notes & Editable Ask</h2>
+        <label class="block text-xs text-slate-400">Target Raise & Use of Funds (Editable Live)</label>
+        <input id="raiseInput" type="text" value="Seed / Pre-Seed Round — Core correlation engine, CAC/KYB & domain connectors, and Nigeria launch" class="w-full rounded-lg border border-borderline bg-obsidian px-3 py-2 text-xs text-white focus:border-sky-400 focus:outline-none" />
+        <label class="block text-xs text-slate-400 pt-1">Traction / Pilot Notes</label>
+        <input id="tractionInput" type="text" value="Architecture blueprint, interactive triage & Stripe checkout build ready for GitHub deployment" class="w-full rounded-lg border border-borderline bg-obsidian px-3 py-2 text-xs text-white focus:border-sky-400 focus:outline-none" />
+      </div>
+    </section>
+  </main>
+
+  <!-- Stripe Checkout Modal -->
+  <div id="stripeModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 p-4">
+    <div class="w-full max-w-md rounded-2xl border border-borderline bg-panel p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-borderline pb-3">
+        <div>
+          <h3 class="text-base font-bold text-white">Stripe Checkout — !LERT</h3>
+          <p class="text-xs text-slate-400" id="checkoutSubtitle"></p>
+        </div>
+        <button onclick="closeModal('stripeModal')" class="text-slate-400 hover:text-white text-sm">✕</button>
+      </div>
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block text-slate-400 mb-1">Billing Email</label>
+          <input id="checkoutEmail" type="email" value="founder@alert-intel.ng" class="w-full rounded-lg border border-borderline bg-obsidian px-3 py-2 text-white" />
+        </div>
+        <div>
+          <label class="block text-slate-400 mb-1">Test Card Number</label>
+          <input type="text" value="4242 •••• •••• 4242" readonly class="w-full rounded-lg border border-borderline bg-obsidian px-3 py-2 font-mono text-slate-300" />
+        </div>
+      </div>
+      <button onclick="completeStripeCheckout()" class="w-full rounded-xl bg-sky-500 py-2.5 text-sm font-semibold text-slate-950 hover:bg-sky-400">
+        Pay & Provision API Key
+      </button>
+    </div>
+  </div>
+
+  <!-- GitHub & Render Stack Modal -->
+  <div id="stackModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 p-4">
+    <div class="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-borderline bg-panel p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-borderline pb-3">
+        <h3 class="text-base font-bold text-white">GitHub Push & Full-Stack Deployment Guide</h3>
+        <button onclick="closeModal('stackModal')" class="text-slate-400 hover:text-white text-sm">✕</button>
+      </div>
+      <p class="text-xs text-slate-300">Extract this zip into your <code class="text-sky-300">alert-intel</code> repository, push to GitHub, and enable GitHub Pages for static hosting or deploy <code class="text-sky-300">backend/</code> to Render.</p>
+      <pre class="rounded-xl border border-borderline bg-obsidian p-4 text-xs text-sky-200">git init
+git add .
+git commit -m "feat: !LERT pitch console, triage demo, stripe billing, and starter stack"
+git branch -M main
+git remote add origin https://github.com/&lt;your-username&gt;/alert-intel.git
+git push -u origin main</pre>
+    </div>
+  </div>
+
+  <script>
+    let currentMode = 'Mode A: Quick Spot-Check';
+    let currentCurrency = 'USD';
+    let selectedPlan = { name: 'Guardian Pro', usd: 29 };
+
+    const presets = {
+      naomi: {
+        input: "Contact 'Naomi' claims to be a senior marketing executive moving to WhatsApp after 2 days, asking for an investment transfer to +234-809-555-0194 while using a public official portrait.",
+        tier: "Tier 4: HIGH_CONFIDENCE_FRAUD",
+        badgeClass: "border-rose-500/40 bg-rose-500/10 text-rose-300",
+        signals: [
+          "Identity & reverse-image inconsistency detected between claimed persona and public figure photo.",
+          "Behavioral playbook match: Initial contact → rapid encrypted-app migration → financial pivot.",
+          "VoIP / virtual line anomaly flagged on contact number."
+        ],
+        redacted: "Contact '[PERSON_REDACTED]' claims to be a senior marketing executive moving to WhatsApp after 2 days, asking for an investment transfer to [PHONE_REDACTED] while using a public official portrait."
+      },
+      recruiter: {
+        input: "Recruiter from 'Apex Global FinTech Ltd' emails from apexglobal-careers-support.com offering remote payroll role and requesting bank details.",
+        tier: "Tier 3: INCONSISTENCY_FLAGGED",
+        badgeClass: "border-amber-500/40 bg-amber-500/10 text-amber-300",
+        signals: [
+          "Domain age anomaly: lookalike domain created 72 hours ago (RDAP/CT log check).",
+          "Sender alignment mismatch: domain does not match primary corporate registry record.",
+          "Held at Tier 3 because a second independent proof is required before Tier 4."
+        ],
+        redacted: "Recruiter from 'Apex Global FinTech Ltd' emails from apexglobal-careers-support.com offering remote payroll role and requesting [BANK_ACCOUNT_REDACTED]."
+      },
+      receipt: {
+        input: "Transferred ₦450,000 to account 0123456789; sender attached a PNG payment receipt with mismatched font kerning and metadata.",
+        tier: "Tier 3: INCONSISTENCY_FLAGGED",
+        badgeClass: "border-amber-500/40 bg-amber-500/10 text-amber-300",
+        signals: [
+          "Error Level Analysis (ELA) and EXIF inspection flagged post-edit compression artifacts on receipt region.",
+          "No confirmed regulator watchlist hit yet; flagged as objective media inconsistency."
+        ],
+        redacted: "Transferred [CURRENCY_REDACTED] to account [ACCOUNT_REDACTED]; sender attached a PNG payment receipt with mismatched font kerning and metadata."
+      },
+      verified: {
+        input: "Verifying corporate registration RC-1849201 for registered entity with active filings and matching official domain.",
+        tier: "Tier 1: VERIFIED_CONSISTENT",
+        badgeClass: "border-emerald-500/40 bg-emerald-500/10 text-emerald-300",
+        signals: [
+          "Corporate registry status active with matching entity name and established domain history.",
+          "Zero media tampering or behavioral anomalies detected."
+        ],
+        redacted: "Verifying corporate registration [ORG_ID_REDACTED] for registered entity with active filings and matching official domain."
+      }
+    };
+
+    function setMode(mode) {
+      currentMode = mode;
+      document.getElementById('activeModeLabel').textContent = 'Active: ' + mode;
+      document.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.className = 'mode-btn rounded-md bg-panel border border-borderline px-3 py-1.5 text-xs font-medium text-slate-300';
+      });
+      const activeId = mode.includes('Mode A') ? 'btn-mode-a' : mode.includes('Mode B') ? 'btn-mode-b' : 'btn-mode-c';
+      document.getElementById(activeId).className = 'mode-btn rounded-md bg-sky-500/20 border border-sky-400/50 px-3 py-1.5 text-xs font-medium text-sky-300';
+      runForensicScan();
+    }
+
+    function loadPreset(key) {
+      const p = presets[key];
+      document.getElementById('triageInput').value = p.input;
+      renderResult(p.tier, p.badgeClass, p.signals, p.redacted);
+    }
+
+    function runForensicScan() {
+      const raw = document.getElementById('triageInput').value.trim();
+      const lower = raw.toLowerCase();
+      let tier = "Tier 2: UNVERIFIED_SPARSE";
+      let badgeClass = "border-slate-500/40 bg-slate-800/60 text-slate-200";
+      let signals = [
+        "Insufficient public/registry footprint to confirm legitimacy; zero hard contradictions detected.",
+        "Mode: " + currentMode + " — no raw IP/ASN retained after evaluation."
+      ];
+
+      if (lower.includes('naomi') || lower.includes('whatsapp') && lower.includes('transfer')) {
+        tier = "Tier 4: HIGH_CONFIDENCE_FRAUD";
+        badgeClass = "border-rose-500/40 bg-rose-500/10 text-rose-300";
+        signals = [
+          "≥ 2 independent forensic signals matched: identity/photo inconsistency + grooming/financial pivot playbook.",
+          "Evaluated under " + currentMode + " with zero-retention RAM telemetry."
+        ];
+      } else if (lower.includes('72') || lower.includes('receipt') || lower.includes('recruiter') || lower.includes('domain')) {
+        tier = "Tier 3: INCONSISTENCY_FLAGGED";
+        badgeClass = "border-amber-500/40 bg-amber-500/10 text-amber-300";
+        signals = [
+          "Objective anomaly detected (domain age / media edit / sender alignment) below confirmed-fraud gate.",
+          "Evaluated under " + currentMode + " — reported without a blanket 'Scam' tag."
+        ];
+      } else if (lower.includes('rc-') || lower.includes('verified') || lower.includes('cac')) {
+        tier = "Tier 1: VERIFIED_CONSISTENT";
+        badgeClass = "border-emerald-500/40 bg-emerald-500/10 text-emerald-300";
+        signals = [
+          "Registry/domain consistency confirmed with zero contradictions detected in " + currentMode + "."
+        ];
+      }
+
+      const redacted = raw
+        .replace(/\+?\d[\d\s-]{7,}\d/g, '[PHONE_REDACTED]')
+        .replace(/\d{10}/g, '[ACCOUNT_REDACTED]')
+        .replace(/[₦$]\s?[\d,]+/g, '[AMOUNT_REDACTED]');
+
+      renderResult(tier, badgeClass, signals, redacted);
+    }
+
+    function renderResult(tier, badgeClass, signals, redacted) {
+      const box = document.getElementById('triageOutput');
+      box.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="rounded-full border px-3 py-1 text-xs font-bold ${badgeClass}">${tier}</span>
+          <span class="font-mono text-[11px] text-slate-400">${currentMode}</span>
+        </div>
+        <div class="space-y-1.5">
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">Correlated Findings</div>
+          <ul class="list-disc pl-5 space-y-1 text-xs text-slate-200">
+            ${signals.map(s => `<li>${s}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="rounded-lg border border-borderline bg-panel p-3 space-y-1">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-sky-400">Presidio RAM PII Scrub Preview (&lt;untrusted_artifact&gt;)</div>
+          <p class="font-mono text-xs text-slate-300">${redacted || '[Empty input]'}</p>
+        </div>
+      `;
+    }
+
+    function setCurrency(curr) {
+      currentCurrency = curr;
+      const isUSD = curr === 'USD';
+      document.getElementById('curr-usd').className = isUSD ? 'rounded-md bg-sky-500 px-3 py-1 font-semibold text-slate-950' : 'rounded-md px-3 py-1 font-semibold text-slate-300';
+      document.getElementById('curr-ngn').className = !isUSD ? 'rounded-md bg-sky-500 px-3 py-1 font-semibold text-slate-950' : 'rounded-md px-3 py-1 font-semibold text-slate-300';
+      document.getElementById('price-starter').innerHTML = isUSD ? '$0 <span class="text-xs font-normal text-slate-400">/ mo</span>' : '₦0 <span class="text-xs font-normal text-slate-400">/ mo</span>';
+      document.getElementById('price-pro').innerHTML = isUSD ? '$29 <span class="text-xs font-normal text-slate-400">/ mo</span>' : '₦45,000 <span class="text-xs font-normal text-slate-400">/ mo</span>';
+      document.getElementById('price-ent').innerHTML = isUSD ? '$249 <span class="text-xs font-normal text-slate-400">/ mo</span>' : '₦385,000 <span class="text-xs font-normal text-slate-400">/ mo</span>';
+    }
+
+    function openStripeCheckout(name, usdPrice) {
+      selectedPlan = { name, usd: usdPrice };
+      const priceText = usdPrice === 0 ? 'Free' : (currentCurrency === 'USD' ? `$${usdPrice}/mo` : `₦${(usdPrice * 1550).toLocaleString()}/mo`);
+      document.getElementById('checkoutSubtitle').textContent = `${name} — ${priceText}`;
+      openModal('stripeModal');
+    }
+
+    function completeStripeCheckout() {
+      closeModal('stripeModal');
+      const rand = Math.random().toString(36).substring(2, 14);
+      document.getElementById('provPlan').textContent = selectedPlan.name;
+      document.getElementById('provKey').textContent = `lrt_live_${rand}`;
+      document.getElementById('provisionedKeyBox').classList.remove('hidden');
+    }
+
+    function openModal(id) {
+      const el = document.getElementById(id);
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+    }
+
+    loadPreset('naomi');
+  </script>
+</body>
+</html>
